@@ -1,0 +1,9 @@
+{
+  "name": "moniproj",
+  "version": "1.0.0",
+  "description": "a p2p wallet application",
+  "main": "src/index.ts",
+  "repository": "https://github.com/philip-edekobi/peer-wallet",
+  "author": "Philip Edekobi(philipedekobi@gmail.com)",
+  "license": "MIT"
+}
