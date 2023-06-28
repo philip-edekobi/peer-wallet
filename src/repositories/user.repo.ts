@@ -2,7 +2,6 @@ import { IUser } from "../dtos/user.dto";
 import { IWallet } from "../dtos/wallet.dto";
 import User from "../db/models/user";
 import Wallet from "../db/models/wallet";
-import e from "express";
 
 export default class UserRepo {
   static async addUser(user: IUser) {

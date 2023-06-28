@@ -1,7 +1,7 @@
 export interface IWallet {
   id: number;
   balance: number;
-  userId: number;
+  ownerEmail: string;
   createdAt: Date;
   updatedAt: Date;
 }

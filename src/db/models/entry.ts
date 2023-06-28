@@ -17,7 +17,6 @@ const Entry = sequelize.define(
     walletId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      unique: "walletId_idx",
       references: {
         model: "wallets",
         key: "id",

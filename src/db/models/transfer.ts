@@ -17,7 +17,6 @@ const Transfer = sequelize.define(
     fromWalletId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      unique: "fromWalletId_idx",
       references: {
         model: "wallets",
         key: "id",
@@ -26,9 +25,8 @@ const Transfer = sequelize.define(
     toWalletId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      unique: "toWalletId_idx",
       references: {
-        model: "Wallet",
+        model: "wallets",
         key: "id",
       },
     },
@@ -39,7 +37,7 @@ const Transfer = sequelize.define(
   },
   {
     tableName: "transfers",
-    indexes: [{ unique: true, fields: ["fromWalletId", "toWalletId"] }],
+    indexes: [{ fields: ["fromWalletId", "toWalletId"] }],
   }
 );
 export default Transfer;
