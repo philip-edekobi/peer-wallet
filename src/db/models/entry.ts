@@ -19,7 +19,7 @@ const Entry = sequelize.define(
       allowNull: false,
       unique: "walletId_idx",
       references: {
-        model: "Wallet",
+        model: "wallets",
         key: "id",
       },
     },

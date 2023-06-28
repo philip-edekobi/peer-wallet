@@ -19,7 +19,7 @@ const Transfer = sequelize.define(
       allowNull: false,
       unique: "fromWalletId_idx",
       references: {
-        model: "Wallet",
+        model: "wallets",
         key: "id",
       },
     },
