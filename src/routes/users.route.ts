@@ -10,4 +10,6 @@ userRouter.post("", UserService.createController);
 
 userRouter.post("/login", UserService.loginController);
 
+userRouter.post("/deposit", authMiddleware, UserService.depositController);
+
 export default { router: userRouter };

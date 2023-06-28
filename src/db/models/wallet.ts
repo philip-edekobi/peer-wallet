@@ -13,13 +13,14 @@ const Wallet = sequelize.define(
     balance: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 0,
     },
     ownerEmail: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: "ownerEmail_idx",
       references: {
-        model: "User",
+        model: "users",
         key: "email",
       },
     },

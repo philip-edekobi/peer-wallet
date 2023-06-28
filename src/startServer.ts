@@ -26,7 +26,9 @@ app.use(cors());
 
 app.use(
   session({
-    store: new (require("connect-pg-simple")(session))({}),
+    store: new (require("connect-pg-simple")(session))({
+      conString: process.env.POSTGRES_URI ?? "",
+    }),
     secret: process.env.SESSION_SECRET ?? "",
     resave: false,
     rolling: true,

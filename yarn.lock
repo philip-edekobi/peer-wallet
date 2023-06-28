@@ -1184,7 +1184,7 @@ pg-types@^4.0.1:
     postgres-interval "^3.0.0"
     postgres-range "^1.1.1"
 
-pg@^8.11.1, pg@^8.8.0:
+pg@^8.8.0:
   version "8.11.1"
   resolved "https://registry.yarnpkg.com/pg/-/pg-8.11.1.tgz#297e0eb240306b1e9e4f55af8a3bae76ae4810b1"
   integrity sha512-utdq2obft07MxaDg0zBJI+l/M3mBRfIpEN3iSemsz0G5F2/VXx+XzqF4oxrbIZXQxt2AZzIUzyVg/YM6xOP/WQ==
