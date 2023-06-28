@@ -26,13 +26,15 @@ dotenv.config();
 //   });
 
 import { startServer } from "./startServer";
-import { testDb } from "./db/connection";
-import morgan from "morgan";
+import { testDb as testDbConnection, initModels } from "./db/connection";
 
-const dbWorks = testDb();
+const dbWorks = testDbConnection();
 
 if (!dbWorks) {
   process.exit(1);
+} else {
+  (async () => {
+    await initModels();
+  })();
+  startServer();
 }
-
-startServer();

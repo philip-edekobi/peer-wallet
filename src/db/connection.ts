@@ -12,3 +12,12 @@ export async function testDb(): Promise<boolean> {
     return false;
   }
 }
+
+export async function initModels() {
+  try {
+    await sequelize.sync();
+    console.log("models are synced");
+  } catch (error) {
+    console.error("models no sync o because: ", error);
+  }
+}
