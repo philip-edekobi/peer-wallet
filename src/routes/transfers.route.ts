@@ -5,6 +5,6 @@ const transferRouter = Router();
 
 import authMiddleware from "../middleware/auth.middleware";
 
-export default { router: transferRouter };
-
 transferRouter.post("", authMiddleware, TransferService.transferController);
+
+export const router = transferRouter;

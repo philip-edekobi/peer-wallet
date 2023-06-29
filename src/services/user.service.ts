@@ -126,7 +126,6 @@ export default class UserService {
           .json({ success: false, message: "transaction faileds" });
       }
 
-      console.log(verification);
       const gatewayResp = verification.data.gateway_response;
       if (gatewayResp === "Declined" || gatewayResp === "Abandoned") {
         return res

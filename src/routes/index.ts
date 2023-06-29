@@ -8,9 +8,9 @@ export const setupRoutes = (app: Express, baseRoute: string) => {
 
   const fileRoutes = fs.readdirSync(__dirname);
   for (let fileRoute of fileRoutes) {
-    if (fileRoute === "index.ts") continue;
+    if (fileRoute.startsWith("index.")) continue;
 
-    const router = require(__dirname + "/" + fileRoute).default.router;
+    const { router } = require(__dirname + "/" + fileRoute);
 
     let routeSegment = fileRoute.split(".")[0];
 

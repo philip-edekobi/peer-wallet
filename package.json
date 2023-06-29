@@ -5,7 +5,8 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "ts-node-dev src/index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "repository": "https://github.com/philip-edekobi/peer-wallet",
   "author": "Philip Edekobi(philipedekobi@gmail.com)",
@@ -23,6 +24,7 @@
     "@types/morgan": "^1.9.4",
     "@types/node": "^20.3.2",
     "@types/sequelize": "^4.28.15",
+    "@types/pg": "^8.10.2",
     "@types/validator": "^13.7.17",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.1.3"
@@ -38,6 +40,7 @@
     "express-session": "^1.17.3",
     "helmet": "^7.0.0",
     "morgan": "^1.10.0",
+    "pg": "^8.11.1",
     "pg-hstore": "^2.3.4",
     "reflect-metadata": "^0.1.13",
     "sequelize": "^6.32.1",

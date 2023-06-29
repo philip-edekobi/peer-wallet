@@ -5,4 +5,4 @@ const entryRouter = Router();
 
 entryRouter.get("/", EntryService.listEntries);
 
-export default { router: entryRouter };
+export const router = entryRouter;

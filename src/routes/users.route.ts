@@ -28,4 +28,4 @@ userRouter.post(
   UserService.depositController
 );
 
-export default { router: userRouter };
+export const router = userRouter;
