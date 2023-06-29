@@ -1,18 +1,26 @@
 import TransferRepo from "../repositories/transfer.repo";
 import { Request, Response } from "express";
+import WalletRepo from "../repositories/wallet.repo";
 
 export default class TransferService {
   static async transferController(req: Request, res: Response) {
-    const { from, to, amount } = req.body;
+    const { email, amount } = req.body;
     const { user } = req.session;
 
-    if (!(from && to && amount)) {
+    if (!(email && amount)) {
       return res
         .status(400)
-        .json({ success: false, message: "from, to, and amount are required" });
+        .json({
+          success: false,
+          message:
+            "the recipient email and amount to be transferred is required",
+        });
     }
 
     try {
+      const from = await WalletRepo.getWalletIDByOwnerEmail(user?.email ?? "");
+      const to = await WalletRepo.getWalletIDByOwnerEmail(email);
+
       const transfer = await TransferRepo.createTransfer(
         //@ts-ignore
         user.email,

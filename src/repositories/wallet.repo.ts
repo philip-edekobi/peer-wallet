@@ -3,9 +3,29 @@ import { IWallet } from "../dtos/wallet.dto";
 
 export default class WalletRepo {
   static async getWalletById(id: number) {
-    const wallet = await Wallet.findByPk(id);
-    return wallet?.toJSON() as IWallet;
+    try {
+      const wallet = await Wallet.findByPk(id);
+      return wallet?.toJSON() as IWallet;
+    } catch (err) {
+      throw err;
+    }
   }
+
+  static async getWalletIDByOwnerEmail(email: string) {
+    try {
+      const [wallet] = await Wallet.findOrCreate({
+        where: {
+          ownerEmail: email,
+        },
+      });
+
+      const walletInfo = wallet.toJSON() as IWallet;
+      return walletInfo.id;
+    } catch (error) {
+      throw error;
+    }
+  }
+
   static async getWallets() {
     try {
       const wallets = await Wallet.findAll();
